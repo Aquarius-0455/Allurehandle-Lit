@@ -1,30 +1,5 @@
-# ==========================================
-# 接口自动化测试框架依赖库
-# ==========================================
+# Allure Handle 依赖
 # 安装命令: pip install -r requirements.txt
-# ==========================================
 
-# HTTP 请求库
-requests>=2.28.0
-
-# YAML 配置文件解析
-PyYAML>=6.0
-
-# 测试数据生成（随机姓名、电话等）
-Faker>=18.0.0
-
-# SSL 警告处理（requests 依赖）
-urllib3>=1.26.0
-
-# 性能测试 / 压力测试
-locust>=2.15.0
-
-# 测试框架
-pytest>=7.4.0
-pytest-xdist>=3.3.0
-pytest-ordering>=0.6
-
-# Allure 报告
+# Allure 报告支持
 allure-pytest>=2.13.0
-
-
