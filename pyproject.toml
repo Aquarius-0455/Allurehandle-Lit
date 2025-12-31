@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "MIT"}
 authors = [
-    {name = "Linker QA Team"}
+    {name = "Lit"}
 ]
 keywords = ["allure", "pytest", "testing", "report"]
 classifiers = [

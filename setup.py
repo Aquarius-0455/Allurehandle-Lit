@@ -24,7 +24,7 @@ setup(
     description='轻量级 Allure 报告处理工具，用于 pytest 测试框架',
     long_description=read_readme(),
     long_description_content_type='text/markdown',
-    author='Linker QA Team',
+    author='Lit',
     author_email='',
     url='https://github.com/your-org/allure-handle',
     packages=['allure_handle'],
