@@ -90,10 +90,15 @@ allure open reports/allure_reports
 - `testdata` (dict): 测试数据字典
 - `title` (str): 数据标题，默认为 "测试数据"
 
-**示例：**
+**示例（来自 `demo_allure.py`）：**
 ```python
-testdata = {"username": "test", "password": "123456"}
-AllureHandle.add_testdata_to_report(testdata, "登录测试数据")
+testdata = {
+    "username": "test_user_001",
+    "email": "test@example.com",
+    "phone": "13800138000",
+    "age": 25
+}
+AllureHandle.add_testdata_to_report(testdata, "创建用户测试数据")
 ```
 
 ---
@@ -113,16 +118,19 @@ AllureHandle.add_testdata_to_report(testdata, "登录测试数据")
   - `case_expect_result` (str): 预期结果
   - `case_result` (str): 测试结果（passed/failed/skipped）
 
-**示例：**
+**示例（来自 `demo_allure.py`）：**
 ```python
 case_data = {
-    'case_id': 'TC_001',
+    'case_id': 'TC_USER_001',
     'case_module': '用户管理',
-    'case_name': '创建用户',
-    'case_priority': 3,
-    'case_setup': '系统已登录',
-    'case_step': '1. 准备数据\n2. 调用接口',
-    'case_expect_result': '创建成功',
+    'case_name': '创建新用户',
+    'case_priority': 3,  # 1-低, 2-中, 3-高
+    'case_setup': '系统已登录，具备用户管理权限',
+    'case_step': '''1. 准备用户测试数据
+2. 调用创建用户接口
+3. 验证返回结果
+4. 检查用户是否创建成功''',
+    'case_expect_result': '用户创建成功，返回用户ID和基本信息',
     'case_result': 'passed'
 }
 AllureHandle.add_case_description_html(case_data)
@@ -143,12 +151,29 @@ AllureHandle.add_case_description_html(case_data)
   - `"HTML"`: HTML 格式
   - `"XML"`: XML 格式
 
-**示例：**
+**示例（来自 `demo_allure.py`）：**
 ```python
+# 添加 JSON 格式附件
+response = {
+    "code": 200,
+    "message": "success",
+    "data": {
+        "user_id": "12345",
+        "username": "test_user_001",
+        "created_at": "2024-01-01 10:00:00"
+    }
+}
 AllureHandle.add_step_with_attachment(
-    title="响应结果",
-    content='{"code": 200, "message": "success"}',
+    title="接口响应",
+    content=str(response),
     attachment_type="JSON"
+)
+
+# 添加 TEXT 格式附件
+AllureHandle.add_step_with_attachment(
+    title="更新响应",
+    content="更新成功",
+    attachment_type="TEXT"
 )
 ```
 
@@ -163,8 +188,27 @@ AllureHandle.add_step_with_attachment(
 - `report_dir` (str): 报告输出目录，默认为 `"reports/allure_reports"`
 - `clean` (bool): 是否清理旧报告，默认为 `True`
 
-**示例：**
+**示例（来自 `demo_allure.py`）：**
 ```python
+# 自动生成报告（demo_allure.py 中已实现）
+def generate_allure_report():
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    
+    if not check_allure_installed():
+        print("Allure CLI 未安装，无法生成报告")
+        return False
+    
+    cmd = [
+        "allure", "generate",
+        str(RESULTS_DIR),
+        "-o", str(REPORT_DIR),
+        "--clean"
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True, shell=True)
+    return result.returncode == 0
+
+# 或使用 AllureHandle 方法
 AllureHandle.generate_report(
     results_dir="reports/allure_results",
     report_dir="reports/allure_reports",
