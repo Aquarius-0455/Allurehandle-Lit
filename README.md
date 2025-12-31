@@ -258,5 +258,5 @@ MIT License
 
 ---
 
-**作者：** Linker QA Team  
+**作者：** Lit  
 **最后更新：** 2024-12-31
