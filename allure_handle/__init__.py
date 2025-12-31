@@ -7,6 +7,6 @@ Allure Handle - 轻量级 Allure 报告处理工具
 """
 from allure_handle.allure_handle import AllureHandle, allure_handle
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __all__ = ['AllureHandle', 'allure_handle']
 

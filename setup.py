@@ -20,7 +20,7 @@ def read_readme():
 
 setup(
     name='allurehandle-lit',
-    version='1.0.0',
+    version='1.0.1',
     description='轻量级 Allure 报告处理工具，用于 pytest 测试框架',
     long_description=read_readme(),
     long_description_content_type='text/markdown',

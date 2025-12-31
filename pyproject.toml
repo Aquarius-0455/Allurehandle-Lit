@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "allurehandle-lit"
-version = "1.0.0"
+version = "1.0.1"
 description = "轻量级 Allure 报告处理工具，用于 pytest 测试框架"
 readme = "README.md"
 requires-python = ">=3.7"
