@@ -19,14 +19,14 @@ def read_readme():
     return "轻量级 Allure 报告处理工具，用于 pytest 测试框架"
 
 setup(
-    name='allure-handle',
+    name='allurehandle-lit',
     version='1.0.0',
     description='轻量级 Allure 报告处理工具，用于 pytest 测试框架',
     long_description=read_readme(),
     long_description_content_type='text/markdown',
     author='Lit',
     author_email='',
-    url='https://github.com/your-org/allure-handle',
+    url='https://github.com/Aquarius-0455/Allurehandle-Lit',
     packages=['allure_handle'],
     include_package_data=False,  # 不需要包含额外文件
     python_requires='>=3.7',

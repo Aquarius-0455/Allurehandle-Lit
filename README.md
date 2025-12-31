@@ -21,7 +21,7 @@
 ### 方式1: 从 PyPI 安装（推荐）
 
 ```bash
-pip install allure-handle
+pip install allurehandle-lit
 ```
 
 ### 方式2: 从 GitHub 安装
@@ -52,7 +52,7 @@ pip install -e .
 ### 1. 安装依赖
 
 ```bash
-pip install allure-handle pytest allure-pytest
+pip install allurehandle-lit pytest allure-pytest
 ```
 
 ### 2. 在测试用例中使用
@@ -262,7 +262,7 @@ git clone https://github.com/Aquarius-0455/Allurehandle-Lit.git
 cd Allurehandle-Lit
 
 # 2. 安装依赖
-pip install allure-handle pytest allure-pytest
+pip install allurehandle-lit pytest allure-pytest
 
 # 3. 运行 Demo（会自动生成报告）
 python demo_allure.py

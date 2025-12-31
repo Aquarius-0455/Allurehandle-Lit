@@ -2,7 +2,7 @@
 
 ## 包信息
 
-- **包名**: `allure-handle`
+- **包名**: `allurehandle-lit`
 - **版本**: 1.0.0
 - **最小依赖**: 只需要 `allure-pytest>=2.13.0`
 
@@ -47,7 +47,7 @@ python setup.py sdist bdist_wheel
 
 打包后会生成：
 - `dist/allure_handle-1.0.0-py3-none-any.whl` - wheel 文件
-- `dist/allure-handle-1.0.0.tar.gz` - 源码包
+- `dist/allurehandle-lit-1.0.0.tar.gz` - 源码包
 
 ### 3. 安装打包好的文件
 
@@ -56,7 +56,7 @@ python setup.py sdist bdist_wheel
 pip install dist/allure_handle-1.0.0-py3-none-any.whl
 
 # 或安装源码包
-pip install dist/allure-handle-1.0.0.tar.gz
+pip install dist/allurehandle-lit-1.0.0.tar.gz
 ```
 
 ## 方式3: 发布到 PyPI（可选）
@@ -78,7 +78,7 @@ pip install twine
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 # 测试安装
-pip install --index-url https://test.pypi.org/simple/ allure-handle
+pip install --index-url https://test.pypi.org/simple/ allurehandle-lit
 
 # 确认无误后上传到正式 PyPI
 twine upload dist/*
@@ -87,7 +87,7 @@ twine upload dist/*
 ### 4. 安装发布的包
 
 ```bash
-pip install allure-handle
+pip install allurehandle-lit
 ```
 
 ## 使用方式
@@ -95,8 +95,8 @@ pip install allure-handle
 ### 在测试项目中安装
 
 ```bash
-# 安装 allure-handle
-pip install allure-handle
+# 安装 allurehandle-lit
+pip install allurehandle-lit
 
 # 安装 pytest 和 allure-pytest（如果还没有）
 pip install pytest allure-pytest

@@ -12,7 +12,7 @@
 ## 安装
 
 ```bash
-pip install allure-handle
+pip install allurehandle-lit
 ```
 
 ## 快速开始
@@ -20,7 +20,7 @@ pip install allure-handle
 ### 1. 安装依赖
 
 ```bash
-pip install allure-handle pytest allure-pytest
+pip install allurehandle-lit pytest allure-pytest
 ```
 
 ### 2. 配置 pytest

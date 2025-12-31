@@ -5,7 +5,7 @@
 ### 1. 安装依赖
 
 ```bash
-pip install allure-handle pytest allure-pytest
+pip install allurehandle-lit pytest allure-pytest
 ```
 
 ### 2. 运行 Demo
