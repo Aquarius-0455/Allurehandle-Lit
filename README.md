@@ -214,6 +214,8 @@ Allurehandle-Lit/
 │   ├── allure_handle.py   # 主模块
 │   ├── example.py          # 使用示例
 │   └── README.md           # 包说明文档
+├── demo_allure.py          # 完整演示文件（推荐）
+├── README_DEMO.md          # Demo 使用说明
 ├── setup.py                # 安装配置
 ├── pyproject.toml          # 项目配置
 ├── MANIFEST.in             # 打包清单
@@ -245,6 +247,79 @@ os.environ['ALLURE_HOME'] = '/path/to/allure'
 ## 📝 完整示例
 
 查看 `allure_handle/example.py` 获取完整的使用示例。
+
+---
+
+## 🎯 运行 Demo 演示
+
+项目包含一个完整的演示文件 `demo_allure.py`，可以直接运行查看效果。
+
+### 快速开始
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/Aquarius-0455/Allurehandle-Lit.git
+cd Allurehandle-Lit
+
+# 2. 安装依赖
+pip install allure-handle pytest allure-pytest
+
+# 3. 运行 Demo（会自动生成报告）
+python demo_allure.py
+```
+
+### Demo 功能
+
+`demo_allure.py` 演示了以下功能：
+
+- ✅ **测试数据展示** - 在报告中以表格形式展示测试数据
+- ✅ **用例描述** - 格式化的 HTML 用例描述，包含用例ID、优先级等信息
+- ✅ **步骤附件** - 支持 JSON、TEXT、HTML 等格式的附件
+- ✅ **测试分类** - 使用 Epic、Feature、Story、Severity 进行分类
+- ✅ **自动生成报告** - 运行后自动生成并打开 Allure 报告
+
+### 手动生成报告
+
+如果自动生成失败，可以手动生成：
+
+```bash
+# 运行测试生成结果
+pytest demo_allure.py --alluredir=reports/allure_results -v
+
+# 生成报告（需要先安装 Allure CLI）
+allure generate reports/allure_results -o reports/allure_reports --clean
+
+# 打开报告
+allure open reports/allure_reports
+```
+
+### 安装 Allure CLI
+
+如果还没有安装 Allure CLI，可以：
+
+**Windows:**
+```bash
+# 使用 Scoop
+scoop install allure
+
+# 或使用 Chocolatey
+choco install allure-commandline
+```
+
+**Mac:**
+```bash
+brew install allure
+```
+
+**Linux:**
+```bash
+# Ubuntu/Debian
+sudo apt-add-repository ppa:qameta/allure
+sudo apt-get update
+sudo apt-get install allure
+```
+
+更多安装方法请查看 [Allure 官方文档](https://docs.qameta.io/allure/)。
 
 ---
 
