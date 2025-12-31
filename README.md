@@ -24,7 +24,17 @@
 pip install allure-handle
 ```
 
-### 方式2: 从源码安装
+### 方式2: 从 GitHub 安装
+
+```bash
+# 直接安装（推荐）
+pip install git+https://github.com/Aquarius-0455/Allurehandle-Lit.git
+
+# 或者指定分支/标签
+pip install git+https://github.com/Aquarius-0455/Allurehandle-Lit.git@main
+```
+
+### 方式3: 从源码安装
 
 ```bash
 # 克隆仓库
