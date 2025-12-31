@@ -55,47 +55,16 @@ pip install -e .
 pip install allurehandle-lit pytest allure-pytest
 ```
 
-### 2. 在测试用例中使用
+### 2. 查看 Demo 示例
 
-```python
-import pytest
-import allure
-from allure_handle import AllureHandle
+项目包含完整的演示文件 `demo_allure.py`，展示了所有功能的使用方法：
 
-@pytest.mark.order(1)
-@allure.epic("用户管理")
-class TestUser:
-    
-    def test_create_user(self):
-        """创建用户"""
-        # 添加测试数据到报告
-        testdata = {
-            "username": "test_user",
-            "email": "test@example.com"
-        }
-        AllureHandle.add_testdata_to_report(testdata, "创建用户测试数据")
-        
-        # 添加用例描述（HTML格式）
-        case_data = {
-            'case_id': 'TC_USER_001',
-            'case_module': '用户管理',
-            'case_name': '创建用户',
-            'case_priority': 3,  # 1-低, 2-中, 3-高
-            'case_setup': '系统已登录',
-            'case_step': '1. 准备用户数据\n2. 调用创建用户接口\n3. 验证返回结果',
-            'case_expect_result': '用户创建成功，返回用户信息',
-            'case_result': 'passed'
-        }
-        AllureHandle.add_case_description_html(case_data)
-        
-        # 添加步骤附件
-        with allure.step("调用创建用户接口"):
-            # ... 你的测试代码 ...
-            AllureHandle.add_step_with_attachment(
-                title="创建结果",
-                content="用户创建成功",
-                attachment_type="TEXT"
-            )
+```bash
+# 查看演示代码
+cat demo_allure.py
+
+# 或直接运行演示
+python demo_allure.py
 ```
 
 ### 3. 运行测试并生成报告
