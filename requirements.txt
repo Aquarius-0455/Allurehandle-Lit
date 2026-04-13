@@ -1,0 +1,5 @@
+# Allure Handle 依赖
+# 安装命令: pip install -r requirements.txt
+
+# Allure 报告支持
+allure-pytest>=2.13.0
